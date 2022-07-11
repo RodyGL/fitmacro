@@ -2,20 +2,20 @@
   "name": "functions",
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
-    "build": "tsc",
-    "build:watch": "tsc --watch",
-    "serve": "npm run build && firebase emulators:start --only functions",
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "emulator": "firebase emulators:start --only functions",
+    "serve": "concurrently -k \"npm:build:watch\" \"npm:emulator\"",
     "shell": "npm run build && firebase functions:shell",
-    "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
   "engines": {
     "node": "16"
   },
-  "main": "lib/index.js",
+  "main": "build/main.js",
   "dependencies": {
-    "firebase-admin": "10.0.2",
-    "firebase-functions": "3.18.0"
+    "firebase-admin": "11.0.0",
+    "firebase-functions": "3.22.0"
   }
 }

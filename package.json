@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Fitmacro",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently -k \"npm:start:*\"",
+    "start:functions": "npm run build:watch --workspace=functions",
+    "start:emulators": "firebase emulators:start --import=./firebase-data --export-on-exit",
+    "lint": "npm run lint --workspaces --if-present"
   },
   "repository": {
     "type": "git",
@@ -20,10 +23,13 @@
     "./packages/*"
   ],
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "5.30.5",
-    "@typescript-eslint/parser": "5.30.5",
+    "@typescript-eslint/eslint-plugin": "5.30.6",
+    "@typescript-eslint/parser": "5.30.6",
+    "builtin-modules": "3.3.0",
+    "concurrently": "7.2.2",
     "eslint": "8.19.0",
     "prettier": "2.7.1",
-    "typescript": "4.7.4"
+    "typescript": "4.7.4",
+    "vite": "2.9.14"
   }
 }
