@@ -1,0 +1,6 @@
+{
+  "extends": "@fitmacro/tsconfig/node16.json",
+  "include": [
+    "."
+  ]
+}

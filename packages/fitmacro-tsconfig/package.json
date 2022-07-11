@@ -1,0 +1,13 @@
+{
+  "name": "@fitmacro/tsconfig",
+  "version": "0.0.0",
+  "license": "MIT",
+  "files": [
+    "base.json",
+    "node16.json",
+    "react.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
