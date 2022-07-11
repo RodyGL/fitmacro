@@ -20,6 +20,7 @@ module.exports = {
       { blankLine: 'always', prev: '*', next: 'export' },
       { blankLine: 'any', prev: 'export', next: 'export' },
     ],
+    'object-shorthand': ['error', 'always'],
   },
   overrides: [
     {
